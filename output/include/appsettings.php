@@ -661,9 +661,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "521_1622912086";
+$projectBuildKey = "531_1622912086";
 $wizardBuildKey = "34702";
-$projectBuildNumber = "521";
+$projectBuildNumber = "531";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -755,6 +755,8 @@ $tableCaptions["English"]["custom_group"] = "Custom Group";
 $tableCaptions["English"]["custom_personal_agenda"] = "Custom Personal Agenda";
 $tableCaptions["English"]["custom_group_agenda_type"] = "Custom Group Agenda Type";
 $tableCaptions["English"]["custom_group_member_agenda"] = "Custom Group Member Agenda";
+$tableCaptions["English"]["custom_group_agenda_subscriber"] = "Custom Group Agenda Subscriber";
+$tableCaptions["English"]["custom_personal_channel"] = "Custom Personal Channel";
 $tableCaptions["Indonesian"] = array();
 $tableCaptions["Indonesian"][""] = "";
 $tableCaptions["Indonesian"]["business_type"] = "Business Type";
@@ -828,6 +830,8 @@ $tableCaptions["Indonesian"]["custom_group"] = "Custom Group";
 $tableCaptions["Indonesian"]["custom_personal_agenda"] = "Custom Personal Agenda";
 $tableCaptions["Indonesian"]["custom_group_agenda_type"] = "Custom Group Agenda Type";
 $tableCaptions["Indonesian"]["custom_group_member_agenda"] = "Custom Group Member Agenda";
+$tableCaptions["Indonesian"]["custom_group_agenda_subscriber"] = "Custom Group Agenda Subscriber";
+$tableCaptions["Indonesian"]["custom_personal_channel"] = "Custom Personal Channel";
 
 
 $globalEvents = new class_GlobalEvents;

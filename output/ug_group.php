@@ -83,6 +83,8 @@ $nonAdminTablesArr[] = "custom_group";
 $nonAdminTablesArr[] = "custom_personal_agenda";
 $nonAdminTablesArr[] = "custom_group_agenda_type";
 $nonAdminTablesArr[] = "custom_group_member_agenda";
+$nonAdminTablesArr[] = "custom_group_agenda_subscriber";
+$nonAdminTablesArr[] = "custom_personal_channel";
 
 $ug_connection = $cman->getForUserGroups();
 

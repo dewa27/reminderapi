@@ -86,6 +86,10 @@ include_once(getabspath("include/custom_group_agenda_type_events.php"));
 $tableEvents["custom_group_agenda_type"] = new eventclass_custom_group_agenda_type;
 include_once(getabspath("include/custom_group_member_agenda_events.php"));
 $tableEvents["custom_group_member_agenda"] = new eventclass_custom_group_member_agenda;
+include_once(getabspath("include/custom_group_agenda_subscriber_events.php"));
+$tableEvents["custom_group_agenda_subscriber"] = new eventclass_custom_group_agenda_subscriber;
+include_once(getabspath("include/custom_personal_channel_events.php"));
+$tableEvents["custom_personal_channel"] = new eventclass_custom_personal_channel;
 
 $xt = new Xtempl();
 

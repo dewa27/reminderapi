@@ -328,6 +328,10 @@ function checkTableName($shortTName )
 		return true;
 	if ("custom_group_member_agenda" == $shortTName )
 		return true;
+	if ("custom_group_agenda_subscriber" == $shortTName )
+		return true;
+	if ("custom_personal_channel" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -1017,6 +1021,24 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="custom_group_member_agenda";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("custom_group_agenda_subscriber");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="custom_group_agenda_subscriber";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("custom_personal_channel");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="custom_personal_channel";
+	}
 	return $arr;
 }
 
@@ -1097,6 +1119,8 @@ function GetTablesListWithoutSecurity()
 	$arr[]="custom_personal_agenda";
 	$arr[]="custom_group_agenda_type";
 	$arr[]="custom_group_member_agenda";
+	$arr[]="custom_group_agenda_subscriber";
+	$arr[]="custom_personal_channel";
 	return $arr;
 }
 
@@ -2443,6 +2467,24 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="custom_group_member_agenda" )
+	{
+		if( $sUserGroup=="andre@andre.com" )
+		{
+			return "ADESPI".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="custom_group_agenda_subscriber" )
+	{
+		if( $sUserGroup=="andre@andre.com" )
+		{
+			return "ADESPI".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="custom_personal_channel" )
 	{
 		if( $sUserGroup=="andre@andre.com" )
 		{

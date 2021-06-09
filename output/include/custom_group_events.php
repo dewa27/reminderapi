@@ -83,20 +83,14 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id'];
+		$sql = "SELECT membership_type.membership_id,business_type.business_type_id,description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id'];
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {
 	$dataSource->setError( DB::LastError() );
 	return false;
 }
-// $arr=array(1,2,3);
-// return new ArrayResult($arr);
 $arr = array();
-	// filter results, apply search, security & other filters
-// $result = $dataSource->filterResult( $result, $command->filter );
-//	reorder results as requested
-// $dataSource->reorderResult( $command, $result );
 while( $data = $result->fetchAssoc())
 {
     if($data['user_type']==3){
@@ -113,8 +107,10 @@ while( $data = $result->fetchAssoc())
         "logo_token" => $data['logo_token'],
         "token_type"=>$data['token_type'],
         "token_group"=>$data['token_group'],
+        "membership_id"=>$data['membership_type'],
         "membership_type"=>$data['membership_type'],
         "business_type"=>$data['business_type'],
+        "business_type_id"=>$data['business_type_id'],
         "open_time"=>$data['open_time'],
         "close_time"=>$data['close_time'],
         "off_day"=>$data['off_day'],
@@ -197,7 +193,28 @@ return new ArrayResult($arr);
 function selectOne($dataSource, $command)
 {
 
-		$sql = "SELECT description,group_id,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE group_id=".$_GET['editid1'];
+		$agenda_sql="SELECT COUNT(*) as total FROM group_agenda WHERE group_id=".$_GET['editid1'];
+$product_sql="SELECT COUNT(*) as total FROM group_product WHERE group_id=".$_GET['editid1'];
+$member_sql="SELECT COUNT(*) as total FROM group_member WHERE group_id=".$_GET['editid1'];
+$preparedSQL=DB::PrepareSQL($agenda_sql);
+$result = DB::Query( $preparedSQL );
+while( $dataa = $result->fetchAssoc())
+{
+    $total_agenda=$dataa['total'];
+}
+$preparedSQL=DB::PrepareSQL($product_sql);
+$result = DB::Query( $preparedSQL );
+while( $dataa = $result->fetchAssoc())
+{
+    $total_product=$dataa['total'];
+}
+$preparedSQL=DB::PrepareSQL($member_sql);
+$result = DB::Query( $preparedSQL );
+while( $dataa = $result->fetchAssoc())
+{
+    $total_member=$dataa['total'];
+}
+$sql = "SELECT group_member.user_type,membership_type.membership_id,business_type.business_type_id,description,group_id,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type JOIN group_member USING(group_id) WHERE group_id=".$_GET['editid1']." AND group_member.member_id=".$_GET['member_id'];
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {
@@ -207,6 +224,13 @@ if( !$result ) {
 $arr= array();
 while( $data = $result->fetchAssoc())
 {
+    if($data['user_type']==3){
+        $status=0;
+    }else if($data['user_type']==2){
+        $status=1;
+    }else{
+        $status=2;
+    }
     $array = array(
         "group_id"=>$data['group_id'],
         "group_name" => $data['group_name'],
@@ -214,11 +238,17 @@ while( $data = $result->fetchAssoc())
         "logo_token" => $data['logo_token'],
         "token_type"=>$data['token_type'],
         "token_group"=>$data['token_group'],
+        "membership_id"=>$data['membership_type'],
         "membership_type"=>$data['membership_type'],
         "business_type"=>$data['business_type'],
+        "business_type_id"=>$data['business_type_id'],
         "open_time"=>$data['open_time'],
         "close_time"=>$data['close_time'],
         "off_day"=>$data['off_day'],
+        "total_member"=>$total_member,
+        "total_agenda"=>$total_agenda,
+        "total_product"=>$total_product,
+        "isManageable"=>$status,
     );
     array_push($arr,$array);
 }

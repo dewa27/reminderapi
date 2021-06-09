@@ -196,5 +196,11 @@
 [data-page=".global_menu"][data-itemid="welcome_item65"] > .bs-welcome-header {
   background-color: #DB7093;
 }
+[data-page=".global_menu"][data-itemid="welcome_item66"] > .bs-welcome-header {
+  background-color: #2F4F4F;
+}
+[data-page=".global_menu"][data-itemid="welcome_item67"] > .bs-welcome-header {
+  background-color: #D2AF80;
+}
 
 
