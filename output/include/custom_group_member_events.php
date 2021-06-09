@@ -81,7 +81,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sqla="SELECT group_member_id,group_id,group_member.member_id,group_member.user_type,group_member.token_group,token_personal,identifier_group,membership_type.membership_type,name,mail from group_member JOIN group_user_type ON group_user_type.id_user_type=group_member.user_type JOIN `group` USING(group_id) JOIN personal ON personal.member_id=group_member.member_id JOIN membership_type ON membership_type.membership_id=group_member.membership_type WHERE group_id=".$_GET["group_id"]." AND group_member.member_id=".$_GET['member_id'];
+		$sqla="SELECT group_member_id,group_id,group_member.member_id,group_member.user_type,group_member.token_group,token_personal,identifier_group,membership_type.membership_type,name,mail from group_member JOIN group_user_type ON group_user_type.id_user_type=group_member.user_type JOIN `group` USING(group_id) JOIN personal ON personal.member_id=group_member.member_id JOIN membership_type ON membership_type.membership_id=group_member.membership_type WHERE group_id=".$_GET["group_id"]." AND group_member.member_id=".$_GET['member_id']." ORDER BY group_member_id DESC";
 $preparedSQLa = DB::PrepareSQL( $sqla );
 $resulta = DB::Query( $preparedSQLa );
 while( $dataa = $resulta->fetchAssoc())
@@ -89,7 +89,7 @@ while( $dataa = $resulta->fetchAssoc())
     $role=$dataa['user_type'];
 }
 if($_GET['member_id']!=0){
-    $sql = "SELECT group_member_id,group_id,group_member.member_id,group_user_type.user_type,group_member.token_group,token_personal,identifier_group,membership_type.membership_type,name,mail from group_member JOIN group_user_type ON group_user_type.id_user_type=group_member.user_type JOIN `group` USING(group_id) JOIN personal ON personal.member_id=group_member.member_id JOIN membership_type ON membership_type.membership_id=group_member.membership_type WHERE group_id=".$_GET["group_id"];
+    $sql = "SELECT group_member_id,group_id,group_member.member_id,group_user_type.user_type,group_member.token_group,token_personal,identifier_group,membership_type.membership_type,name,mail from group_member JOIN group_user_type ON group_user_type.id_user_type=group_member.user_type JOIN `group` USING(group_id) JOIN personal ON personal.member_id=group_member.member_id JOIN membership_type ON membership_type.membership_id=group_member.membership_type WHERE group_id=".$_GET["group_id"]." ORDER BY group_member_id DESC";
 }
 
 $preparedSQL = DB::PrepareSQL( $sql );

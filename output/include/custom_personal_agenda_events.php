@@ -81,7 +81,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT * FROM personal_agenda JOIN loop_type ON personal_agenda.loop_type=loop_type.id_loop JOIN personal_agenda_repeat_date USING(member_agenda_id) WHERE member_id=".$_GET['member_id'];
+		$sql = "SELECT * FROM personal_agenda JOIN loop_type ON personal_agenda.loop_type=loop_type.id_loop JOIN personal_agenda_repeat_date USING(member_agenda_id) WHERE member_id=".$_GET['member_id']." ORDER BY member_agenda_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {

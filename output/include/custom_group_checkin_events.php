@@ -14,6 +14,8 @@
 	// fill list of events
 		$this->events["selectList"]=true;
 
+		$this->events["update"]=true;
+
 
 	}
 
@@ -82,9 +84,9 @@ function selectList($dataSource, $command)
 {
 
 		if(isset($_GET['member_id'])){
-     $sql = "SELECT * FROM group_member_checkin WHERE group_id=".$_GET['group_id']." AND member_id=".$_GET['member_id'];
+     $sql = "SELECT * FROM group_member_checkin WHERE group_id=".$_GET['group_id']." AND member_id=".$_GET['member_id']." ORDER BY group_member_checkin_id DESC";
 }else{
-    $sql = "SELECT * FROM group_member_checkin WHERE group_id=".$_GET['group_id'];
+    $sql = "SELECT * FROM group_member_checkin WHERE group_id=".$_GET['group_id']." ORDER BY group_member_checkin_id DESC";
 }
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
@@ -92,10 +94,6 @@ if( !$result ) {
 	$dataSource->setError( DB::LastError() );
 	return false;
 }
-	// filter results, apply search, security & other filters
-$result = $dataSource->filterResult( $result, $command->filter );
-//	reorder results as requested
-$dataSource->reorderResult( $command, $result );
 return $result;
 
 ;		
@@ -104,6 +102,95 @@ return $result;
 		
 		
 		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				// Update
+function update($dataSource, $command)
+{
+
+		$data=array();
+$key=array();
+$key['group_member_checkin_id']=$_POST['group_member_checkin_id'];
+if($_POST['task']=='review'){
+    $data['review_member']=$_POST['review_member'];
+    $data['rating_member']=$_POST['rating_member'];
+    $result=DB::Update("group_member_checkin",$data,$key);
+}else{
+    date_default_timezone_set('Asia/Makassar'); 
+    $data['checkout_date']=date("Y-m-d H:i:s");
+    $result=DB::Update("group_member_checkin",$data,$key);
+}
+if( !$result ) {
+	$dataSource->setError( DB::LastError() );
+	return false;
+}
+return $result;
+
+;		
+} // function update
+
 		
 		
 

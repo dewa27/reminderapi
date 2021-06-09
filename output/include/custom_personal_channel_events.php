@@ -83,7 +83,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT * FROM `personal_channel` JOIN personal USING(member_id) JOIN channel using(channel_id) WHERE personal_channel.member_id=".$_GET['member_id'];
+		$sql = "SELECT * FROM `personal_channel` JOIN personal USING(member_id) JOIN channel using(channel_id) WHERE personal_channel.member_id=".$_GET['member_id']." ORDER BY member_ch_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {

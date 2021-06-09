@@ -81,7 +81,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql="SELECT * FROM group_agenda_type JOIN `group` ON group.group_id=group_agenda_type.group_id WHERE group.group_id=".$_GET['group_id'];
+		$sql="SELECT * FROM group_agenda_type JOIN `group` ON group.group_id=group_agenda_type.group_id WHERE group.group_id=".$_GET['group_id']." ORDER BY agenda_type_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {

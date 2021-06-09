@@ -81,7 +81,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT * FROM group_member_agenda_subscriber JOIN personal ON personal.`member_id`=group_member_agenda_subscriber.`member_id` JOIN group_agenda_type USING(agenda_type_id) WHERE group_member_agenda_subscriber.member_id=".$_GET['member_id']." AND group_agenda_type.`group_id`=".$_GET['group_id'];
+		$sql = "SELECT * FROM group_member_agenda_subscriber JOIN personal ON personal.`member_id`=group_member_agenda_subscriber.`member_id` JOIN group_agenda_type USING(agenda_type_id) WHERE group_member_agenda_subscriber.member_id=".$_GET['member_id']." AND group_agenda_type.`group_id`=".$_GET['group_id']." ORDER BY group_member_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {

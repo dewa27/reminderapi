@@ -83,7 +83,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT membership_type.membership_id,business_type.business_type_id,description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id'];
+		$sql = "SELECT membership_type.membership_id,business_type.business_type_id,description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id']." ORDER BY group_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {

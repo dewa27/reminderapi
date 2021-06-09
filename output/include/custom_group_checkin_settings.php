@@ -6,11 +6,11 @@ $tdatacustom_group_checkin[".OwnerID"] = "";
 $tdatacustom_group_checkin[".OriginalTable"] = "custom_group_checkin";
 
 
-$tdatacustom_group_checkin[".pagesByType"] = my_json_decode( "{\"export\":[\"export\"],\"import\":[\"import\"],\"list\":[\"list\"],\"print\":[\"print\"],\"search\":[\"search\"]}" );
+$tdatacustom_group_checkin[".pagesByType"] = my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"export\":[\"export\"],\"import\":[\"import\"],\"list\":[\"list\"],\"print\":[\"print\"],\"search\":[\"search\"],\"view\":[\"view\"]}" );
 $tdatacustom_group_checkin[".originalPagesByType"] = $tdatacustom_group_checkin[".pagesByType"];
-$tdatacustom_group_checkin[".pages"] = types2pages( my_json_decode( "{\"export\":[\"export\"],\"import\":[\"import\"],\"list\":[\"list\"],\"print\":[\"print\"],\"search\":[\"search\"]}" ) );
+$tdatacustom_group_checkin[".pages"] = types2pages( my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"export\":[\"export\"],\"import\":[\"import\"],\"list\":[\"list\"],\"print\":[\"print\"],\"search\":[\"search\"],\"view\":[\"view\"]}" ) );
 $tdatacustom_group_checkin[".originalPages"] = $tdatacustom_group_checkin[".pages"];
-$tdatacustom_group_checkin[".defaultPages"] = my_json_decode( "{\"export\":\"export\",\"import\":\"import\",\"list\":\"list\",\"print\":\"print\",\"search\":\"search\"}" );
+$tdatacustom_group_checkin[".defaultPages"] = my_json_decode( "{\"add\":\"add\",\"edit\":\"edit\",\"export\":\"export\",\"import\":\"import\",\"list\":\"list\",\"print\":\"print\",\"search\":\"search\",\"view\":\"view\"}" );
 $tdatacustom_group_checkin[".originalDefaultPages"] = $tdatacustom_group_checkin[".defaultPages"];
 
 //	field labels
