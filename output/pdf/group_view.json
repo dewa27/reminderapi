@@ -149,6 +149,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field10}","stack":[{"text":"{$jslabel group off_day }","bold":true},{"text":{$off_day_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field11}","stack":[{"text":"{$jslabel group valid }","bold":true},{"text":{$valid_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
           "alignment": 'left',

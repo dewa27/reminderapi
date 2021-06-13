@@ -651,7 +651,7 @@ $arrCustomPages = array();
 
 																					$cUserNameFieldType	= 200;
 												$cPasswordFieldType	= 200;
-																														
+																					
 $gPermissionsRefreshTime = 0;
 $gPermissionsRead = false;
 
@@ -661,9 +661,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "543_1622912086";
+$projectBuildKey = "545_1623325062";
 $wizardBuildKey = "34702";
-$projectBuildNumber = "543";
+$projectBuildNumber = "545";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -754,9 +754,9 @@ $tableCaptions["English"]["custom_group_checkin"] = "Custom Group Checkin";
 $tableCaptions["English"]["custom_group"] = "Custom Group";
 $tableCaptions["English"]["custom_personal_agenda"] = "Custom Personal Agenda";
 $tableCaptions["English"]["custom_group_agenda_type"] = "Custom Group Agenda Type";
+$tableCaptions["English"]["custom_personal_channel"] = "Custom Personal Channel";
 $tableCaptions["English"]["custom_group_member_agenda"] = "Custom Group Member Agenda";
 $tableCaptions["English"]["custom_group_agenda_subscriber"] = "Custom Group Agenda Subscriber";
-$tableCaptions["English"]["custom_personal_channel"] = "Custom Personal Channel";
 $tableCaptions["Indonesian"] = array();
 $tableCaptions["Indonesian"][""] = "";
 $tableCaptions["Indonesian"]["business_type"] = "Business Type";
@@ -829,9 +829,9 @@ $tableCaptions["Indonesian"]["custom_group_checkin"] = "Custom Group Checkin";
 $tableCaptions["Indonesian"]["custom_group"] = "Custom Group";
 $tableCaptions["Indonesian"]["custom_personal_agenda"] = "Custom Personal Agenda";
 $tableCaptions["Indonesian"]["custom_group_agenda_type"] = "Custom Group Agenda Type";
+$tableCaptions["Indonesian"]["custom_personal_channel"] = "Custom Personal Channel";
 $tableCaptions["Indonesian"]["custom_group_member_agenda"] = "Custom Group Member Agenda";
 $tableCaptions["Indonesian"]["custom_group_agenda_subscriber"] = "Custom Group Agenda Subscriber";
-$tableCaptions["Indonesian"]["custom_personal_channel"] = "Custom Personal Channel";
 
 
 $globalEvents = new class_GlobalEvents;

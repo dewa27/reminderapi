@@ -1245,7 +1245,7 @@ $tdatagroup_member_checkin[".hideMobileList"] = array();
 	$fdata["GoodName"] = "id_room";
 	$fdata["ownerTable"] = "group_member_checkin";
 	$fdata["Label"] = GetFieldLabel("group_member_checkin","id_room");
-	$fdata["FieldType"] = 200;
+	$fdata["FieldType"] = 20;
 
 	
 	

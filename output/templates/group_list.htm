@@ -113,6 +113,19 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_business_type}</span>
 						</div>
 		{END searchCtrlBlock_business_type}
+																{BEGIN searchCtrlBlock_valid}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_valid}" {$filterRow_attrs_valid}>
+			<label>{$label group valid }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_valid}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_valid}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_valid}</span>
+						</div>
+		{END searchCtrlBlock_valid}
 																{BEGIN searchCtrlBlock_token_type}
 
 
@@ -757,6 +770,9 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="off_day"]:before {
 		content: "{$label group off_day}";
 	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="valid"]:before {
+		content: "{$label group valid}";
+	}
 	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table {$grid_classes}  r-flexgrid rnr-b-grid rnr-gridtable" 
@@ -846,7 +862,7 @@
 	 
 		{BEGIN group_id_fieldheadercolumn}
 	{BEGIN group_id_fieldheader}
-	<SPAN {$group_id_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group_id">
+	<SPAN {$group_id_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group_id">
 	{$label group group_id }	{$arrow_icon_group_id}
 	</SPAN>
 	{END group_id_fieldheader}
@@ -873,7 +889,7 @@
 	 
 		{BEGIN group_name_fieldheadercolumn}
 	{BEGIN group_name_fieldheader}
-	<SPAN {$group_name_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group_name">
+	<SPAN {$group_name_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group_name">
 	{$label group group_name }	{$arrow_icon_group_name}
 	</SPAN>
 	{END group_name_fieldheader}
@@ -900,7 +916,7 @@
 	 
 		{BEGIN description_fieldheadercolumn}
 	{BEGIN description_fieldheader}
-	<SPAN {$description_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="description">
+	<SPAN {$description_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="description">
 	{$label group description }	{$arrow_icon_description}
 	</SPAN>
 	{END description_fieldheader}
@@ -927,7 +943,7 @@
 	 
 		{BEGIN logo_fieldheadercolumn}
 	{BEGIN logo_fieldheader}
-	<SPAN {$logo_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="logo">
+	<SPAN {$logo_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="logo">
 	{$label group logo }	{$arrow_icon_logo}
 	</SPAN>
 	{END logo_fieldheader}
@@ -954,7 +970,7 @@
 	 
 		{BEGIN token_type_fieldheadercolumn}
 	{BEGIN token_type_fieldheader}
-	<SPAN {$token_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="token_type">
+	<SPAN {$token_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="token_type">
 	{$label group token_type }	{$arrow_icon_token_type}
 	</SPAN>
 	{END token_type_fieldheader}
@@ -981,7 +997,7 @@
 	 
 		{BEGIN token_group_fieldheadercolumn}
 	{BEGIN token_group_fieldheader}
-	<SPAN {$token_group_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="token_group">
+	<SPAN {$token_group_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="token_group">
 	{$label group token_group }	{$arrow_icon_token_group}
 	</SPAN>
 	{END token_group_fieldheader}
@@ -1008,7 +1024,7 @@
 	 
 		{BEGIN membership_type_fieldheadercolumn}
 	{BEGIN membership_type_fieldheader}
-	<SPAN {$membership_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="membership_type">
+	<SPAN {$membership_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="membership_type">
 	{$label group membership_type }	{$arrow_icon_membership_type}
 	</SPAN>
 	{END membership_type_fieldheader}
@@ -1035,7 +1051,7 @@
 	 
 		{BEGIN business_type_fieldheadercolumn}
 	{BEGIN business_type_fieldheader}
-	<SPAN {$business_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="business_type">
+	<SPAN {$business_type_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="business_type">
 	{$label group business_type }	{$arrow_icon_business_type}
 	</SPAN>
 	{END business_type_fieldheader}
@@ -1062,7 +1078,7 @@
 	 
 		{BEGIN open_time_fieldheadercolumn}
 	{BEGIN open_time_fieldheader}
-	<SPAN {$open_time_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="open_time">
+	<SPAN {$open_time_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="open_time">
 	{$label group open_time }	{$arrow_icon_open_time}
 	</SPAN>
 	{END open_time_fieldheader}
@@ -1089,7 +1105,7 @@
 	 
 		{BEGIN close_time_fieldheadercolumn}
 	{BEGIN close_time_fieldheader}
-	<SPAN {$close_time_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="close_time">
+	<SPAN {$close_time_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field21" {$item_simple_grid_field21} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="close_time">
 	{$label group close_time }	{$arrow_icon_close_time}
 	</SPAN>
 	{END close_time_fieldheader}
@@ -1116,7 +1132,7 @@
 	 
 		{BEGIN off_day_fieldheadercolumn}
 	{BEGIN off_day_fieldheader}
-	<SPAN {$off_day_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field21" {$item_simple_grid_field21} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="off_day">
+	<SPAN {$off_day_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field22" {$item_simple_grid_field22} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="off_day">
 	{$label group off_day }	{$arrow_icon_off_day}
 	</SPAN>
 	{END off_day_fieldheader}
@@ -1125,6 +1141,33 @@
 	
 	</th>
 	{END cellblock_grid_headcell_field10}
+				 
+					{BEGIN cellblock_grid_headcell_field11}
+	<th
+	
+	{$cell_grid_headcell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$valid_class}
+			"
+
+			data-field="valid"
+	
+	data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN valid_fieldheadercolumn}
+	{BEGIN valid_fieldheader}
+	<SPAN {$valid_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field23" {$item_simple_grid_field23} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="valid">
+	{$label group valid }	{$arrow_icon_valid}
+	</SPAN>
+	{END valid_fieldheader}
+{END valid_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field11}
 							</tr>
 					 
 					 
@@ -1532,6 +1575,29 @@
 {END off_day_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field10}
+				 
+					{BEGIN cellblock_grid_cell_field11}
+	<td
+	
+	{$cell_grid_cell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$valid_class}
+			"
+
+			data-field="valid"
+	
+	data-cellId="grid_cell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN valid_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="valid" data-default-width >
+{$valid_value}
+</span>
+{END valid_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field11}
 							</tr>
 					 
 						<tr {$rowattrs} {$row_grid_2} class="{$rowclass} 
@@ -1847,6 +1913,22 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field10}
+				 
+					{BEGIN cellblock_grid_footcell_field11}
+	<td
+	
+	{$cell_grid_footcell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="group_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field11}
 							</tr>
 					
 					</tfoot>

@@ -2496,6 +2496,7 @@ $proto33["m_columns"][] = "business_type";
 $proto33["m_columns"][] = "open_time";
 $proto33["m_columns"][] = "close_time";
 $proto33["m_columns"][] = "off_day";
+$proto33["m_columns"][] = "valid";
 $obj = new SQLTable($proto33);
 
 $proto32["m_table"] = $obj;

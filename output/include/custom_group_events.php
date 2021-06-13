@@ -83,7 +83,7 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT membership_type.membership_id,business_type.business_type_id,description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id']." ORDER BY group_id DESC";
+		$sql = "SELECT group.valid,membership_type.membership_id,business_type.business_type_id,description,group_id,user_type,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN group_member USING(group_id) JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type WHERE member_id=".$_GET['member_id']." ORDER BY group_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {
@@ -114,6 +114,7 @@ while( $data = $result->fetchAssoc())
         "open_time"=>$data['open_time'],
         "close_time"=>$data['close_time'],
         "off_day"=>$data['off_day'],
+        "valid"=>$data['valid'],
         "isManageable"=>$status,
     );
     array_push($arr,$array);
@@ -214,7 +215,7 @@ while( $dataa = $result->fetchAssoc())
 {
     $total_member=$dataa['total'];
 }
-$sql = "SELECT group_member.user_type,membership_type.membership_id,business_type.business_type_id,description,group_id,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type JOIN group_member USING(group_id) WHERE group_id=".$_GET['editid1']." AND group_member.member_id=".$_GET['member_id'];
+$sql = "SELECT group.valid,group_member.user_type,membership_type.membership_id,business_type.business_type_id,description,group_id,group_name,logo,token_type,group.token_group,membership_type.membership_type,business_type.business_type,open_time,close_time,off_day FROM `group` JOIN membership_type ON group.membership_type=membership_type.membership_id JOIN business_type ON business_type.business_type_id=group.business_type JOIN group_member USING(group_id) WHERE group_id=".$_GET['editid1']." AND group_member.member_id=".$_GET['member_id'];
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {
@@ -248,6 +249,7 @@ while( $data = $result->fetchAssoc())
         "total_member"=>$total_member,
         "total_agenda"=>$total_agenda,
         "total_product"=>$total_product,
+        "valid"=>$data['valid'],
         "isManageable"=>$status,
     );
     array_push($arr,$array);

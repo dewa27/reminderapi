@@ -11,6 +11,7 @@ $dalTablegroup["business_type"] = array("type"=>16,"varname"=>"business_type", "
 $dalTablegroup["open_time"] = array("type"=>134,"varname"=>"open_time", "name" => "open_time");
 $dalTablegroup["close_time"] = array("type"=>134,"varname"=>"close_time", "name" => "close_time");
 $dalTablegroup["off_day"] = array("type"=>200,"varname"=>"off_day", "name" => "off_day");
+$dalTablegroup["valid"] = array("type"=>129,"varname"=>"valid", "name" => "valid");
 	$dalTablegroup["group_id"]["key"]=true;
 
 $dal_info["notif_basic1_at_localhost__group"] = &$dalTablegroup;

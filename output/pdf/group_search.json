@@ -149,6 +149,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_search_field10}","text":{$off_day_pdfvalue}},
 				
+				
+			{"hidden":"{$item_hide_integrated_search_field11}","text":{$valid_pdfvalue}},
+				
 		  ],
   "border": [ false, false, false, false ],
           "alignment": 'left',

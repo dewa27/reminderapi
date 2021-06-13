@@ -359,6 +359,31 @@
 </div>
 
 {END off_day_fieldblock}
+											
+{BEGIN valid_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_valid}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="valid" 
+	
+	data-signal-error-for="valid{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" {$item_integrated_search_field11} data-pageid="{$pageid}" data-field="valid" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_valid}">
+		{$label group valid }	</label>
+	<div class="r-search-option">
+		{$searchtype_valid}
+	</div>
+	<div class="r-search-field">
+		{$valid_editcontrol}	</div>
+	<div class="r-search-field">
+		{$valid_editcontrol1}
+	</div>
+	
+</div>
+
+{END valid_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

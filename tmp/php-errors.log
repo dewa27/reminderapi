@@ -1,2 +1,0 @@
-[09-Jun-2021 07:59:32 America/New_York] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) in D:\KULIAH\Semester 4\Integrasi dan Migrasi Sistem\G1\Reminder\output\include\custom_group_checkin_events.php on line 202
-[09-Jun-2021 08:02:05 America/New_York] PHP Fatal error:  Call to a member function fetchAssoc() on a non-object in D:\KULIAH\Semester 4\Integrasi dan Migrasi Sistem\G1\Reminder\output\include\custom_personal_events.php on line 260

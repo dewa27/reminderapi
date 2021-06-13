@@ -94,6 +94,9 @@ pdfDocument = {
 										{BEGIN col_grid_11}
 					"%",
 					{END col_grid_11}
+										{BEGIN col_grid_12}
+					"%",
+					{END col_grid_12}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -260,7 +263,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field11}","text":"{$jslabel group group_id }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field12}","text":"{$jslabel group group_id }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -286,7 +289,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field12}","text":"{$jslabel group group_name }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field13}","text":"{$jslabel group group_name }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -312,7 +315,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field13}","text":"{$jslabel group description }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field14}","text":"{$jslabel group description }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -338,7 +341,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field14}","text":"{$jslabel group logo }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field15}","text":"{$jslabel group logo }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -364,7 +367,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field15}","text":"{$jslabel group token_type }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field16}","text":"{$jslabel group token_type }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -390,7 +393,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field16}","text":"{$jslabel group token_group }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field17}","text":"{$jslabel group token_group }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -416,7 +419,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field17}","text":"{$jslabel group membership_type }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field18}","text":"{$jslabel group membership_type }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -442,7 +445,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field18}","text":"{$jslabel group business_type }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field19}","text":"{$jslabel group business_type }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -468,7 +471,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field19}","text":"{$jslabel group open_time }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field20}","text":"{$jslabel group open_time }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -494,7 +497,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field20}","text":"{$jslabel group close_time }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field21}","text":"{$jslabel group close_time }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -520,7 +523,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field21}","text":"{$jslabel group off_day }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field22}","text":"{$jslabel group off_day }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -528,6 +531,32 @@ pdfDocument = {
   },
 
 {END cellblock_grid_headcell_field10}
+																			{BEGIN cellblock_grid_headcell_field11}
+{
+	cellId: 'headcell_field11',
+	col:0,
+	row:0,
+			style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_simple_grid_field23}","text":"{$jslabel group valid }","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+          "alignment": '{$valid_align}',
+  },
+
+{END cellblock_grid_headcell_field11}
 											],
 				{END row_grid_0}
 								
@@ -848,6 +877,32 @@ pdfDocument = {
   },
 
 {END cellblock_grid_cell_field10}
+																			{BEGIN cellblock_grid_cell_field11}
+{
+	cellId: 'cell_field11',
+	col:0,
+	row:0,
+			style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_simple_grid_field11}","text":{$valid_pdfvalue}},
+				
+		  ],
+  "border": [ true, true, true, true ],
+          "alignment": '{$valid_align}',
+  },
+
+{END cellblock_grid_cell_field11}
 											],
 				{END row_grid_1}
 						{END grid_record}
@@ -1144,6 +1199,30 @@ pdfDocument = {
   },
 
 {END cellblock_grid_footcell_field10}
+																			{BEGIN cellblock_grid_footcell_field11}
+{
+	cellId: 'footcell_field11',
+	col:0,
+	row:0,
+			style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+          "alignment": 'left',
+  },
+
+{END cellblock_grid_footcell_field11}
 											],
 				{END row_grid_2}
 							

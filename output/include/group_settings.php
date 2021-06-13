@@ -58,6 +58,9 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsgroup["English"]["off_day"] = "Off Day";
 	$fieldToolTipsgroup["English"]["off_day"] = "";
 	$placeHoldersgroup["English"]["off_day"] = "";
+	$fieldLabelsgroup["English"]["valid"] = "Valid";
+	$fieldToolTipsgroup["English"]["valid"] = "";
+	$placeHoldersgroup["English"]["valid"] = "";
 	if (count($fieldToolTipsgroup["English"]))
 		$tdatagroup[".isUseToolTips"] = true;
 }
@@ -100,6 +103,9 @@ if(mlang_getcurrentlang()=="Indonesian")
 	$fieldLabelsgroup["Indonesian"]["off_day"] = "Off Day";
 	$fieldToolTipsgroup["Indonesian"]["off_day"] = "";
 	$placeHoldersgroup["Indonesian"]["off_day"] = "";
+	$fieldLabelsgroup["Indonesian"]["valid"] = "Valid";
+	$fieldToolTipsgroup["Indonesian"]["valid"] = "";
+	$placeHoldersgroup["Indonesian"]["valid"] = "";
 	if (count($fieldToolTipsgroup["Indonesian"]))
 		$tdatagroup[".isUseToolTips"] = true;
 }
@@ -235,6 +241,7 @@ $tdatagroup[".googleLikeFields"][] = "business_type";
 $tdatagroup[".googleLikeFields"][] = "open_time";
 $tdatagroup[".googleLikeFields"][] = "close_time";
 $tdatagroup[".googleLikeFields"][] = "off_day";
+$tdatagroup[".googleLikeFields"][] = "valid";
 
 
 
@@ -270,7 +277,7 @@ $tdatagroup[".strOrderBy"] = $tstrOrderBy;
 $tdatagroup[".orderindexes"] = array();
 
 
-$tdatagroup[".sqlHead"] = "SELECT group_id,  	group_name,  	description,  	logo,  	token_type,  	token_group,  	membership_type,  	business_type,  	open_time,  	close_time,  	off_day";
+$tdatagroup[".sqlHead"] = "SELECT group_id,  	group_name,  	description,  	logo,  	token_type,  	token_group,  	membership_type,  	business_type,  	open_time,  	close_time,  	off_day,  	valid";
 $tdatagroup[".sqlFrom"] = "FROM `group`";
 $tdatagroup[".sqlWhereExpr"] = "";
 $tdatagroup[".sqlTail"] = "";
@@ -1915,6 +1922,156 @@ $tdatagroup[".hideMobileList"] = array();
 
 	$tdatagroup["off_day"] = $fdata;
 		$tdatagroup[".searchableFields"][] = "off_day";
+//	valid
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 12;
+	$fdata["strName"] = "valid";
+	$fdata["GoodName"] = "valid";
+	$fdata["ownerTable"] = "group";
+	$fdata["Label"] = GetFieldLabel("group","valid");
+	$fdata["FieldType"] = 129;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "valid";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "valid";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Lookup wizard");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+// Begin Lookup settings
+		$edata["LookupType"] = 0;
+			$edata["autoCompleteFieldsOnEdit"] = 0;
+	$edata["autoCompleteFields"] = array();
+		$edata["LCType"] = 0;
+
+	
+	
+		$edata["LookupValues"] = array();
+	$edata["LookupValues"][] = "0";
+	$edata["LookupValues"][] = "1";
+
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatagroup["valid"] = $fdata;
+		$tdatagroup[".searchableFields"][] = "valid";
 
 
 $tables_data["group"]=&$tdatagroup;
@@ -2464,7 +2621,7 @@ function createSqlQuery_group()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "group_id,  	group_name,  	description,  	logo,  	token_type,  	token_group,  	membership_type,  	business_type,  	open_time,  	close_time,  	off_day";
+$proto0["m_strFieldList"] = "group_id,  	group_name,  	description,  	logo,  	token_type,  	token_group,  	membership_type,  	business_type,  	open_time,  	close_time,  	off_day,  	valid";
 $proto0["m_strFrom"] = "FROM `group`";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -2658,47 +2815,62 @@ $proto26["m_alias"] = "";
 $obj = new SQLFieldListItem($proto26);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto28=array();
-$proto28["m_link"] = "SQLL_MAIN";
-			$proto29=array();
-$proto29["m_strName"] = "group";
-$proto29["m_srcTableName"] = "group";
-$proto29["m_columns"] = array();
-$proto29["m_columns"][] = "group_id";
-$proto29["m_columns"][] = "group_name";
-$proto29["m_columns"][] = "description";
-$proto29["m_columns"][] = "logo";
-$proto29["m_columns"][] = "token_type";
-$proto29["m_columns"][] = "token_group";
-$proto29["m_columns"][] = "membership_type";
-$proto29["m_columns"][] = "business_type";
-$proto29["m_columns"][] = "open_time";
-$proto29["m_columns"][] = "close_time";
-$proto29["m_columns"][] = "off_day";
-$obj = new SQLTable($proto29);
+						$proto28=array();
+			$obj = new SQLField(array(
+	"m_strName" => "valid",
+	"m_strTable" => "group",
+	"m_srcTableName" => "group"
+));
 
-$proto28["m_table"] = $obj;
-$proto28["m_sql"] = "`group`";
-$proto28["m_alias"] = "";
+$proto28["m_sql"] = "valid";
 $proto28["m_srcTableName"] = "group";
-$proto30=array();
-$proto30["m_sql"] = "";
-$proto30["m_uniontype"] = "SQLL_UNKNOWN";
+$proto28["m_expr"]=$obj;
+$proto28["m_alias"] = "";
+$obj = new SQLFieldListItem($proto28);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto30=array();
+$proto30["m_link"] = "SQLL_MAIN";
+			$proto31=array();
+$proto31["m_strName"] = "group";
+$proto31["m_srcTableName"] = "group";
+$proto31["m_columns"] = array();
+$proto31["m_columns"][] = "group_id";
+$proto31["m_columns"][] = "group_name";
+$proto31["m_columns"][] = "description";
+$proto31["m_columns"][] = "logo";
+$proto31["m_columns"][] = "token_type";
+$proto31["m_columns"][] = "token_group";
+$proto31["m_columns"][] = "membership_type";
+$proto31["m_columns"][] = "business_type";
+$proto31["m_columns"][] = "open_time";
+$proto31["m_columns"][] = "close_time";
+$proto31["m_columns"][] = "off_day";
+$proto31["m_columns"][] = "valid";
+$obj = new SQLTable($proto31);
+
+$proto30["m_table"] = $obj;
+$proto30["m_sql"] = "`group`";
+$proto30["m_alias"] = "";
+$proto30["m_srcTableName"] = "group";
+$proto32=array();
+$proto32["m_sql"] = "";
+$proto32["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto30["m_column"]=$obj;
-$proto30["m_contained"] = array();
-$proto30["m_strCase"] = "";
-$proto30["m_havingmode"] = false;
-$proto30["m_inBrackets"] = false;
-$proto30["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto30);
+$proto32["m_column"]=$obj;
+$proto32["m_contained"] = array();
+$proto32["m_strCase"] = "";
+$proto32["m_havingmode"] = false;
+$proto32["m_inBrackets"] = false;
+$proto32["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto32);
 
-$proto28["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto28);
+$proto30["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto30);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -2714,7 +2886,7 @@ $queryData_group = createSqlQuery_group();
 	
 		;
 
-											
+												
 
 $tdatagroup[".sqlquery"] = $queryData_group;
 

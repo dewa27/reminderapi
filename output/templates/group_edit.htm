@@ -334,6 +334,29 @@
 
 
 {END off_day_fieldblock}
+											
+{BEGIN valid_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_valid}  r-vertical-field" 
+	data-fieldname="valid" 
+	data-signal-error-for="valid{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="valid" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_valid}">
+		{BEGIN valid_label}{$label group valid }{END valid_label}
+	</label>
+	<div class="r-edit-field">
+		{$valid_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="valid">
+		<div class="text-muted" >
+		{$tooltip group valid }		</div>
+	</div>
+</div>
+
+
+{END valid_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}
