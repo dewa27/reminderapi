@@ -81,17 +81,7 @@
 function selectList($dataSource, $command)
 {
 
-		// if(isset($_GET['status'])){
-//     if($_GET['status']==1){
-//         $status="paid";
-//     }else{
-//         $status="not_paid";
-//     }
-// }else{
-//     $status="no";
-// }
-
-if(isset($_GET['member_id'])){
+		if(isset($_GET['member_id'])){
     if($_GET['status']==1){
      $sql = "SELECT * FROM group_member_order JOIN group_member_order_detail ON group_member_order.group_member_order=group_member_order_detail.group_member_order_id WHERE group_member_order.group_id=".$_GET['group_id']." AND group_member_order.member_id=".$_GET['member_id']." AND payment_status='paid' ORDER BY group_member_order.group_member_order";
     }else if($_GET['status']==0){
