@@ -81,17 +81,13 @@
 function selectList($dataSource, $command)
 {
 
-		$sql = "SELECT * FROM personal_agenda JOIN loop_type ON personal_agenda.loop_type=loop_type.id_loop JOIN personal_agenda_repeat_date USING(member_agenda_id) WHERE member_id=".$_GET['member_id']." ORDER BY member_agenda_id DESC";
+		$sql = "SELECT * FROM personal_agenda JOIN loop_type ON personal_agenda.loop_type=loop_type.id_loop LEFT JOIN personal_agenda_repeat_date USING(member_agenda_id) WHERE member_id=".$_GET['member_id']." ORDER BY member_agenda_id DESC";
 $preparedSQL = DB::PrepareSQL( $sql );
 $result = DB::Query( $preparedSQL );
 if( !$result ) {
 	$dataSource->setError( DB::LastError() );
 	return false;
 }
-	// filter results, apply search, security & other filters
-$result = $dataSource->filterResult( $result, $command->filter );
-//	reorder results as requested
-$dataSource->reorderResult( $command, $result );
 return $result;
 
 ;		
